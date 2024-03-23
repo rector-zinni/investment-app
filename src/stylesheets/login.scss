@@ -1,0 +1,267 @@
+@import 'utilities';
+
+.login{
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: 100vh;
+    background-color: $dark;
+    >div>img{
+        width: 100%;
+        height: 100%;
+    }
+    >div:first-child{
+        @media (max-width: $layout-breakpoint-small) {
+            display: none;
+               }
+    }
+
+
+
+
+    //media query
+    @media (max-width: $layout-breakpoint-small) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    // this is the end of styling the first container that hod the image in the login grid
+
+    .login-pane{
+        display: flex;
+        flex-direction: column;
+       padding: 1em 8em 1em 8em;
+        justify-content: center;
+        color: $grey2;
+        font-family: $gantari;
+        gap: 1em;
+
+
+
+        //media query
+        @media (max-width: $layout-breakpoint-medium) {
+            padding: 1em 4em 1em 4em;
+          }
+          @media (max-width: $layout-breakpoint-small) {
+            padding: 1em 3em 1em 3em;
+          }
+          @media (max-width: $layout-breakpoint-x-small) {
+            padding: 1em 1.6em 1em 1.6em;
+            gap: .6em;
+          }
+    }
+
+    .login-pane>.header-logo{
+        text-align: center;
+
+
+
+         //media query
+         @media (max-width: $layout-breakpoint-medium) {
+           
+         }
+         @media (max-width: $layout-breakpoint-small) {
+          
+         }
+         @media (max-width: $layout-breakpoint-x-small) {
+          
+         }
+    }
+
+    .login-pane>.header-title{
+    >p{
+        text-align: center;
+font-weight: 300;
+font-size: 3em;
+margin: 0;
+    }
+        
+
+
+
+         
+    }
+
+
+
+.login-pane>form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+//media query
+@media (max-width: $layout-breakpoint-medium) {
+           
+}
+@media (max-width: $layout-breakpoint-small) {
+ 
+}
+@media (max-width: $layout-breakpoint-x-small) {
+    gap: 1.5em;
+}
+}
+
+.login-pane>form>.textfield:focus{
+    border: 1px solid rgb(29, 149, 247);
+ }
+.login-pane>form>.textfield{
+    border: 1px solid $grey2;
+    display: flex;
+    align-items: center;
+    background-color: $black2;
+    justify-content: space-between;
+    padding: .5em 1em .5em 1em;
+    font-size: 2em;
+    border-radius: .5em;
+    
+    >input{
+        background-color: transparent;
+        color: $grey2;
+        border: 0;
+        outline: 0;
+        min-width: 75%;
+    }
+    
+}
+
+
+.forget-password{
+     //media query
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     font-size: 1.3em;
+     @media (max-width: $layout-breakpoint-medium) {
+           
+     }
+     @media (max-width: $layout-breakpoint-small) {
+      
+     }
+     @media (max-width: $layout-breakpoint-x-small) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+     }
+
+     >.checkbox{
+        display: flex;
+        align-items: center;
+       >input[type='checkbox']{
+        color: $white;
+       }
+     }
+}
+.forgot-pass-link{
+    text-decoration: none;
+    color: $white;
+    cursor: pointer;
+}
+
+
+.sign-in-btn>button{
+width: 100%;
+padding-top: .7em;
+padding-bottom: .7em;
+font-size: 1.5em;
+color: $black2;
+font-weight: 100;
+border-radius: .5em;
+//media query
+@media (max-width: $layout-breakpoint-medium) {
+           
+}
+@media (max-width: $layout-breakpoint-small) {
+ 
+}
+@media (max-width: $layout-breakpoint-x-small) {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    font-size: 1.5em;
+}
+}
+
+.alt-signin{
+
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.3em;
+
+>hr{
+    min-width: 30%;
+}
+
+     //media query
+
+     
+     @media (max-width: $layout-breakpoint-medium) {
+           
+     }
+     @media (max-width: $layout-breakpoint-small) {
+      
+     }
+     @media (max-width: $layout-breakpoint-x-small) {
+      
+     }
+}
+
+.sign-in-alt-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+   
+    >button{
+        font-size: 1.5em;
+        padding: .4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5em;
+        border: none;
+        outline: none;
+        color: $grey1;
+        border-radius: .5em;
+        cursor: pointer;
+    }
+    >button:focus{
+        outline: 1px solid $grey1;
+    }
+
+    >button:first-child{
+        background-color: rgb(70, 135, 242);
+    }
+    >button:last-child{
+        background-color: rgb(59, 89, 152);
+    }
+
+
+ //media query
+ @media (max-width: $layout-breakpoint-medium) {
+           
+ }
+ @media (max-width: $layout-breakpoint-small) {
+  
+ }
+ @media (max-width: $layout-breakpoint-x-small) {
+  
+ }    
+}
+
+.register-non-member{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    margin-top: 2em;
+    gap: .3em;
+}
+
+    //media query
+    @media (max-width: $layout-breakpoint-medium) {
+           
+    }
+    @media (max-width: $layout-breakpoint-small) {
+     
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+     
+    }
