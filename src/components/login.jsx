@@ -4,11 +4,57 @@ import headerLogo from '../image/header-logo-6ohuZh.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import {faFacebookF,faGoogle}  from '@fortawesome/free-brands-svg-icons'
-import { useRef } from 'react'
+import { useRef,useState } from 'react'
 import { Link } from 'react-router-dom'
+import {auth} from '../fire'
+import { createUserWithEmailAndPassword,GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 
+
+const actionCodeSettings = {
+    // URL you want to redirect back to. The domain (www.example.com) for this
+    // URL must be in the authorized domains list in the Firebase Console.
+    url: 'https://localhost:3000/user',
+    // This must be true.
+    handleCodeInApp: true,
+    iOS: {
+      bundleId: 'com.example.ios'
+    },
+    android: {
+      packageName: 'com.example.android',
+      installApp: true,
+      minimumVersion: '12'
+    },
+    dynamicLinkDomain: 'example.page.link'
+  };
 const Login = () => {
+    const signInWithGooglePop=()=>{
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+       .then((result) => {
+         // This gives you a Google Access Token. You can use it to access the Google API.
+         const credential = GoogleAuthProvider.credentialFromResult(result);
+         const token = credential.accessToken;
+         // The signed-in user info.
+         const user = result.user;
+         // IdP data available using getAdditionalUserInfo(result)
+         // ...
+         console.log(credential)
+       }).catch((error) => {
+         // Handle Errors here.
+         const errorCode = error.code;
+         const errorMessage = error.message;
+         // The email of the user's account used.
+         const email = error.customData.email;
+         // The AuthCredential type that was used.
+         const credential = GoogleAuthProvider.credentialFromError(error);
+         console.log(errorMessage)
+         // ...
+       });
+     }
 
+
+    const  [username,setUsername]=useState('');
+    const  [password,setPassword]=useState('');
     const textfield1Ref=useRef();
     const textfield2Ref=useRef();
     const getfocus=(ref)=>{
@@ -54,6 +100,12 @@ const Login = () => {
              onBlur={()=>{
                 Blurr(textfield1Ref)
              }}
+             value={username}
+             onChange={
+                (e)=>{
+                    setUsername(e.target.value)
+                }
+             }
               /> 
               <FontAwesomeIcon 
               icon={faUser}
@@ -78,6 +130,12 @@ const Login = () => {
              onBlur={()=>{
                 Blurr(textfield2Ref)
              }}
+             value={password}
+             onChange={
+                (e)=>{
+                    setPassword(e.target.value)
+                }}
+
               /> 
               <FontAwesomeIcon 
               icon={faLock}
@@ -89,8 +147,8 @@ const Login = () => {
         {/* forget password */}
         <div className="forget-password">
             <div className="checkbox">
-            <input type="checkbox" value={23} />
-             <span>Remember me</span>
+            <input type="checkbox" id='check' />
+             <label  htmlFor='check'>Remember me</label>
             </div>
             <span>
 
@@ -116,7 +174,12 @@ const Login = () => {
         </div>
         {/* end of singn alternatives */}
         <div className="sign-in-alt-btn">
-                <button>
+                <button
+                onClick={(e)=>{
+                    e.preventDefault();
+                    signInWithGooglePop();
+                }}
+                >
                     <FontAwesomeIcon icon={faGoogle}/>
                     <span>Google</span>
                 </button>

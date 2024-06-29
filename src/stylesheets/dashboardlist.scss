@@ -1,0 +1,122 @@
+@import 'utilities';
+
+.list-header-title{
+           display: flex;
+           justify-content: center;
+           align-items: center; 
+}
+.dashboard-list{
+    display: flex;
+    padding: .5em;
+    flex-direction: column;
+    @media (max-width: $layout-breakpoint-small) {
+        
+       
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+     
+    }
+
+}
+.dashboard-list-item{
+list-style: none;
+padding: 0;
+display: flex;
+flex-direction: column;
+font-size: 2.1em;
+@media (max-width: $layout-breakpoint-small) {
+        flex-direction: row;
+        align-items: center;
+       font-size: 1.7em;
+}
+@media (max-width: $layout-breakpoint-medium) {
+      
+}
+@media (max-width: $layout-breakpoint-x-small) {
+ font-size: 1.4em;
+}
+}
+.dashboard-list-item li{
+    
+    transition: all 100ms;
+    display: flex;
+    @media (max-width: $layout-breakpoint-small) {
+        
+       
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+     
+    }
+}
+.dashboard-list-item li:hover{
+    
+    cursor: pointer;
+
+}
+.dashboard-list-item  li> .nav-link{
+    padding: .5em .5em;
+color: $grey1;
+text-decoration: none;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: .2em;
+width: 100%;
+@media (max-width: $layout-breakpoint-small) {
+        
+   gap: .3em;    
+}
+@media (max-width: $layout-breakpoint-medium) {
+      
+}
+@media (max-width: $layout-breakpoint-x-small) {
+ 
+}
+}
+.dashboard-list-item  li> .nav-link> span{
+    font-size: .5em;
+    padding: .2em .5em;
+    background-color: red;
+    border-radius: .2em;
+    justify-self: end;
+    align-self: center;
+
+}
+.dashboard-list-item  li> .nav-link>div{
+    @media (max-width: $layout-breakpoint-small) {
+        
+       display: flex;
+       flex-direction: column-reverse;
+       
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+     >span{
+        font-size: .7em;
+     }
+    }
+}
+.active{
+  font-size: 2.2rem;
+  border-left: .1em solid white;
+  background-color: $red2;
+  @media (max-width: $layout-breakpoint-small) {
+      border: 0;  
+      font-size: 1.7rem;
+       
+  }
+  @media (max-width: $layout-breakpoint-medium) {
+        
+  }
+  @media (max-width: $layout-breakpoint-x-small) {
+    font-size: 1.5rem;
+  }
+    }

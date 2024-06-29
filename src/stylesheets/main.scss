@@ -1,0 +1,60 @@
+@import 'utilities';
+
+.main-component{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    border: 1px solid $black3;
+    border-radius: .5em;
+    
+}
+.welcome-msg{
+    display: flex;
+    flex-direction: column;
+    gap: .2em;
+}
+.welcome-msg>p{
+margin:0;
+font-size: 3em;
+@media (max-width: $layout-breakpoint-small) {
+    
+   
+}
+@media (max-width: $layout-breakpoint-medium) {
+      
+}
+@media (max-width: $layout-breakpoint-x-small) {
+    font-size: 2em;
+}
+}
+.welcome-msg>span{
+    font-size: 1.5em;
+    @media (max-width: $layout-breakpoint-small) {
+    
+   
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+        font-size: 1.2em;
+    }
+}
+
+.invesment-panel{
+display: grid;
+grid-template-columns: repeat(3,32%);
+justify-content: center;
+gap: .5em;
+@media (max-width: $layout-breakpoint-small) {
+    grid-template-columns: repeat(2,45%);
+   
+}
+@media (max-width: $layout-breakpoint-medium) {
+      
+}
+@media (max-width: $layout-breakpoint-x-small) {
+    grid-template-columns: repeat(1,98%);
+}
+}

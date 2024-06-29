@@ -1,0 +1,119 @@
+@import 'utilities';
+
+.dashboard{
+    color: $grey1;
+    @media (max-width: $layout-breakpoint-small) {
+    
+   
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+        padding: 0;
+}
+}
+
+.dashboard-wrapper{
+  display: grid;
+  grid-template-columns:  [ln-1]20% [ln-2]80%[ln-3];
+  position: relative;
+  @media (max-width: $layout-breakpoint-small) {
+          grid-template-rows: [ln-1]10% [ln-2]84%[ln-3]10%[ln-4];
+  }
+  @media (max-width: $layout-breakpoint-medium) {
+   
+  }
+  @media (max-width: $layout-breakpoint-x-small) {
+  }
+}
+.sidebar{
+    min-height: 100vh;
+    @media (max-width: $layout-breakpoint-small) {
+         grid-row-start: ln-3; 
+         grid-row-end: ln-4;
+         grid-column-start: ln-1;
+         grid-column-end: ln-3;
+        min-height: auto;
+         position: fixed;
+         width: 100vw;
+         left: 0;
+         bottom: 0;
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+     
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+     
+    }
+}
+
+.header{
+    min-height: 10vh;
+    background-color: $black;
+    grid-column-start: ln-1;
+    grid-column-end: ln-3;
+
+    @media (max-width: $layout-breakpoint-small) {
+        grid-column-start: ln-1;
+        grid-column-end: ln-3; 
+        min-height: 8vh;   
+        position: sticky;  
+        left: 0;
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+     
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+     
+    }
+}
+.main-content{
+    padding: 1em;
+    min-height: 90vh;
+    background-color: $black2;
+    display:grid;
+    grid-template-columns: 70% 30%;
+    gap: 1em;
+    place-content: center top;
+    
+
+   
+    @media (max-width: $layout-breakpoint-small) {
+        grid-column-start: ln-1;
+        grid-column-end: ln-3; 
+        grid-template-columns: 100%; 
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+     
+    }
+}
+
+.component-shadow{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.component-shadow-2{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.ads-container{
+    transition: all 500ms;
+    padding: .5em;
+    border: 1px solid $black3;
+    border-radius: .5em;
+    position: sticky;
+    bottom: 0px;
+    @media (max-width: $layout-breakpoint-small) {
+       display: none;
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+     
+    } 
+}

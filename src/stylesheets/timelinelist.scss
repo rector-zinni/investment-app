@@ -1,0 +1,32 @@
+@import 'utilities';
+
+
+.timeline-list{
+    position: relative;
+}
+
+.timeline-list::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: $grey1;
+    top: 0;
+   bottom: 0;
+}
+.timeline-content{
+    padding: .5em .5em .5em 1em;
+    position: relative;
+}
+.timeline-content::before{
+    content: '';
+    position: absolute;
+    left:.5em;
+    background-color: white;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    top: 1em;
+    left: -0.29em; 
+    border: rgb(0, 255, 13) solid 2px;  
+    
+}

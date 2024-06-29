@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import Login from './components/login'
 import Register from './components/register'
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals'
+import Dashboard from './components/dashboard/Dashboard';
+import Main from './components/dashboard/Main';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Deposit from './components/dashboard/Deposit';
 const router = createBrowserRouter([
   {
     path: "/app",
@@ -22,6 +25,21 @@ const router = createBrowserRouter([
     path: "/create-account",
     element: <Register/>,
   },
+  {
+    path:'/dashboard',
+    element:<Dashboard/>,
+    children:[
+      {
+        path:'main',
+        element:<Main/>
+      },
+      {
+        path:'deposit',
+        element:<Deposit/>
+      }
+    ]
+   
+  }
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

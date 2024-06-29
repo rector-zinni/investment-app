@@ -6,11 +6,31 @@ import {  faLock, faMailReplyAll, faMobilePhone, faPerson, faUser } from '@forta
 import {faFacebookF,faGoogle}  from '@fortawesome/free-brands-svg-icons'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom' 
+import {auth} from '../fire'
+import { createUserWithEmailAndPassword,GoogleAuthProvider,signInWithPopup } from "firebase/auth";
+
 
 
 const Login = () => {
 
    
+
+ const registerUser=()=>{
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed up 
+      const user = userCredential.user;
+      alert('user Created')
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage)
+      // ..
+    });
+ }
+
 const inputRef ={
     firstname:useRef(),
     secondName:useRef(),
@@ -27,8 +47,10 @@ const  [firstname,setFirstname]=useState('');
 const  [secondname,setSecondname]=useState('');
 const  [username,setUsername]=useState('');
 const  [email,setEmail]=useState('');
+const [telephone,setTelephone]=useState('');
 const  [password,setPassword]=useState('');
 const  [confirm_Password,setConfirm_Password]=useState('');
+
     const getfocus=(ref)=>{
         ref.current.style.outline='1px solid rgb(29, 149, 247)';
         ref.current.style.backgroundColor='#2f3032';
@@ -107,6 +129,10 @@ const  [confirm_Password,setConfirm_Password]=useState('');
              onBlur={()=>{
                 Blurr(inputRef.secondName)
              }}
+             value={secondname}
+             onChange={(e)=>{
+                setSecondname(e.target.value)
+             }}
               /> 
               <FontAwesomeIcon 
               icon={faPerson}
@@ -135,6 +161,10 @@ const  [confirm_Password,setConfirm_Password]=useState('');
              }}
              onBlur={()=>{
                 Blurr(inputRef.username)
+             }}
+             value={username}
+             onChange={(e)=>{
+                setUsername(e.target.value)
              }}
               /> 
               <FontAwesomeIcon 
@@ -176,6 +206,10 @@ const  [confirm_Password,setConfirm_Password]=useState('');
              onBlur={()=>{
                 Blurr(inputRef.email)
              }}
+             value={email}
+             onChange={(e)=>{
+                setEmail(e.target.value)
+             }}
               /> 
               <FontAwesomeIcon 
               icon={faMailReplyAll}
@@ -205,6 +239,10 @@ const  [confirm_Password,setConfirm_Password]=useState('');
              onBlur={()=>{
                 Blurr(inputRef.telephone)
              }}
+             value={telephone}
+             onChange={(e)=>{
+                setTelephone(e.target.value)
+             }}
               /> 
               <FontAwesomeIcon 
               icon={faMobilePhone}
@@ -233,6 +271,10 @@ const  [confirm_Password,setConfirm_Password]=useState('');
              onBlur={()=>{
                 Blurr(inputRef.password)
              }}
+             value={password}
+             onChange={(e)=>{
+                setPassword(e.target.value)
+             }}
               /> 
               <FontAwesomeIcon 
               icon={faLock}
@@ -248,7 +290,7 @@ const  [confirm_Password,setConfirm_Password]=useState('');
         >
         
            <input 
-           type="confirmPassword"
+           type="password"
             name="confirmPassword" 
             id="cpassword"
              placeholder='Confirm Password'  
@@ -258,6 +300,11 @@ const  [confirm_Password,setConfirm_Password]=useState('');
              onBlur={()=>{
                 Blurr(inputRef.confirmpassword)
              }}
+             value={confirm_Password}
+             onChange={(e)=>{
+                setConfirm_Password(e.target.value)
+             }}
+             
               /> 
               <FontAwesomeIcon 
               icon={faLock}
@@ -272,14 +319,11 @@ const  [confirm_Password,setConfirm_Password]=useState('');
         {/* forget password */}
         <div className="forget-password">
             <div className="checkbox">
-            <input type="checkbox" value={23} />
-             <span>Remember me</span>
+            <input type="checkbox" id='check' />
+             <label htmlFor='check'>I agree with terms and condition</label>
             </div>
             <span>
 
-                <Link className='forgot-pass-link'>
-                forgot password
-                </Link>
                 
             </span>
            
@@ -287,7 +331,12 @@ const  [confirm_Password,setConfirm_Password]=useState('');
         {/* end of forget pssword */}
 {/* sign in alternative */}
         <div className="sign-in-btn">
-            <button>
+            <button
+            onClick={(e)=>{
+               e.preventDefault();
+               registerUser()
+            }}
+            >
                 Create Account
             </button>
         </div>
@@ -325,3 +374,44 @@ const  [confirm_Password,setConfirm_Password]=useState('');
 }
 
 export default Login;
+
+const userData={
+   bioData:{
+   firstame:'',
+   secondname:'',
+   gender:'',
+   },
+   security:{
+   username:'',
+   phonenumber:'',
+   password:'',
+   date:'',
+   lastlogin:''
+   },
+   investment:{
+      investment_plan:'',
+      investmentFund:'',
+      capital:'',
+      RIO:'',
+      duration:'',
+      lastdeposited:{
+         amount:'',
+         date:''
+      },
+      lastwithdrawl:{
+         amount:'',
+         date:''
+      }
+   },
+   nextOfKin:{
+      firstame:'',
+      firstame:'',
+      secondname:'',
+      gender:'',
+      relationship:''
+                                                                                                  
+
+   }
+
+
+}
