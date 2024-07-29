@@ -1,0 +1,116 @@
+@import '../../../../stylesheets/utilities';
+
+.security-settings{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    
+    border-left:black solid 1px;
+    @media (max-width: $layout-breakpoint-small) {
+       padding: 1em;
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+        width: 100%;
+         border: none;
+         padding: .5em;
+    }
+
+}
+
+.security-settings-header{
+    display: flex;
+    gap: .5em;
+    align-items: center;
+    >*{
+        font-size: 1.2em;
+    }
+}
+
+.change-password-form{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+
+}
+
+.password-field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    max-width: 40%;
+    border-radius: .3em;
+    @media (max-width: $layout-breakpoint-small) {
+        max-width: 95%; 
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+        max-width: 95%; 
+        overflow: hidden;
+    }
+
+    >*{
+        font-size: 1.4em;
+        padding: .3em;
+    }
+    >input{
+        min-width: 80%;
+        outline: 0;
+        border: 0;
+        @media (max-width: $layout-breakpoint-small) {
+            min-width: 80%;
+        }
+        @media (max-width: $layout-breakpoint-medium) {
+              
+        }
+        @media (max-width: $layout-breakpoint-x-small) {
+            min-width: 95%;
+        }
+    
+    }
+
+    >.password-icon{
+        cursor: pointer;
+    }
+
+}
+
+.change-password-btn{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 1em;
+    max-width: 40%;    
+    @media (max-width: $layout-breakpoint-small) {
+        max-width: 100%;
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+
+    }
+
+    
+    >button{
+        background-color:rgba(0, 0, 0);
+        color: white;
+        border:rgb(255, 255, 255) solid 1px;
+        outline: 0;
+        padding: .5em;
+        font-size: 1.2em;
+        border-radius: .5em;
+        cursor: pointer;
+    }
+    >button:hover{
+        background-color:rgba(255, 255, 255, 0.9);
+        color: rgb(0, 0, 0);
+        border:rgb(0, 0, 0) solid 1px;
+        
+    }
+}

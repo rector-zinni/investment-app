@@ -7,35 +7,43 @@ const InvestmentTypeWidget = () => {
                 <p>Investments</p>
             </div>
             <div className="invest-type-widget-content">
-                <div className="investment-type-list">
-                    <img src={img} alt="" srcset="" />
-                    <div>
-                        <p>Housing</p>
-                        <p className='lato-black'>$5,690.09</p>
-                    </div>
-                </div>
+
+                <InvestmentAsset
+                    title='gold'
+                    amount='$150,000'
+                    img={img}
+                />
+
+                <InvestmentAsset
+                    title='silver'
+                    amount='$2,000'
+                    img={img}
+                />
 
 
-                <div className="investment-type-list">
-                    <img src={img} alt="" srcset="" />
-                    <div>
-                        <p>Housing</p>
-                        <p className='lato-black'>$5,690.09</p>
-                    </div>
-                </div>
+           <InvestmentAsset
+                    title='silver'
+                    amount='$2,000'
+                    img={img}
+                />
 
-
-                <div className="investment-type-list">
-                    <img src={img} alt="" srcset="" />
-                    <div>
-                        <p>Housing</p>
-                        <p className='lato-black'>$5,690.09</p>
-                    </div>
-                </div>
             </div>
         </div>
-        
+
     );
 }
- 
+
+const InvestmentAsset = ({ title, img, amount }) => {
+
+    return (
+        <div className="investment-type-list">
+            <img src={img} alt="" srcset="" />
+            <div>
+                <p>{title}</p>
+                <p className='lato-black'>{amount}</p>
+            </div>
+        </div>
+
+    )
+}
 export default InvestmentTypeWidget;

@@ -8,19 +8,27 @@ import logo from './../../image/header-logo-6ohuZh.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import TimelineList from './TimelineList';
+import { ThemeContext } from '../..';
+import { useContext, useState } from 'react';
 const Dashboard = () => {
+const [theme,setTheme] = useState('light');
+const dasboardthemeclass='dashboard '+theme
     return ( 
-        <div className="dashboard">
+        <div className={dasboardthemeclass}>
         <div className="dashboard-wrapper">
-        <div className="header">
-        <Header/>
+        <div className="headers">
+            <ThemeContext.Provider value={theme}>
+        <Header changeTheme={()=>{
+            setTheme((theme==='light')?'dark':'light')
+        }}/>
+        </ThemeContext.Provider>
         </div>
             <div className="sidebar">
                 <DashboardList/>
             </div>
            
             <div className="main-content">
-<div className="outlet component-shadow">
+<div className="outlet">
 <Outlet/>
 </div>
 <div className="ads-container component-shadow">

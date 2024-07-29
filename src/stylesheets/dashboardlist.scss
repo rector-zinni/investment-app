@@ -9,6 +9,8 @@
     display: flex;
     padding: .5em;
     flex-direction: column;
+    z-index: 10;
+    
     @media (max-width: $layout-breakpoint-small) {
         
        
@@ -26,17 +28,19 @@ list-style: none;
 padding: 0;
 display: flex;
 flex-direction: column;
-font-size: 2.1em;
+font-size: 2em;
 @media (max-width: $layout-breakpoint-small) {
         flex-direction: row;
         align-items: center;
-       font-size: 1.7em;
+       
+       z-index:9;
 }
 @media (max-width: $layout-breakpoint-medium) {
-      
+    font-size: 1.3em;
 }
 @media (max-width: $layout-breakpoint-x-small) {
- font-size: 1.4em;
+ font-size: 1.2em;
+ overflow: hidden;
 }
 }
 .dashboard-list-item li{
@@ -55,9 +59,27 @@ font-size: 2.1em;
     }
 }
 .dashboard-list-item li:hover{
-    
+    background-color: rgba($color: #000000, $alpha: .1);
     cursor: pointer;
 
+}
+
+.dashboard-list-item li:last-child{
+    
+    @media (max-width: $layout-breakpoint-small) {
+        
+       
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+     
+    }
+}
+
+.dashboard-list-item li:last-child:hover{
+    background-color: rgb(100, 100, 100);
 }
 .dashboard-list-item  li> .nav-link{
     padding: .5em .5em;
@@ -86,6 +108,16 @@ width: 100%;
     border-radius: .2em;
     justify-self: end;
     align-self: center;
+    @media (max-width: $layout-breakpoint-small) {
+        
+        gap: .3em;    
+     }
+     @media (max-width: $layout-breakpoint-medium) {
+           
+     }
+     @media (max-width: $layout-breakpoint-x-small) {
+       display: none;
+     }
 
 }
 .dashboard-list-item  li> .nav-link>div{
@@ -104,13 +136,13 @@ width: 100%;
      }
     }
 }
-.active{
-  font-size: 2.2rem;
+.nav-link.active{
+  font-size: 1.7rem;
   border-left: .1em solid white;
   background-color: $red2;
   @media (max-width: $layout-breakpoint-small) {
       border: 0;  
-      font-size: 1.7rem;
+      font-size: 1.5rem;
        
   }
   @media (max-width: $layout-breakpoint-medium) {
@@ -120,3 +152,5 @@ width: 100%;
     font-size: 1.5rem;
   }
     }
+
+    

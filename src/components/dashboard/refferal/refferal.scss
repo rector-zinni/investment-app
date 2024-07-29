@@ -1,0 +1,205 @@
+@import '../../../stylesheets/utilities';
+
+.referral {
+    background-color: rgba($color: #000000, $alpha: 0.1);
+    max-height: 100vh;
+    overflow-y: scroll;
+    border-radius: 1em;
+    padding: 3em 1em;
+    border: 1px solid $black3;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    @media (max-width: $layout-breakpoint-small) {}
+
+    @media (max-width: $layout-breakpoint-medium) {}
+
+    @media (max-width: $layout-breakpoint-x-small) {
+        padding: 2em .5em 4em .5em;
+    }
+}
+
+.referral-header {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+
+    >h1 {
+        font-size: 2em;
+        margin: 0;
+    }
+
+    >p {
+        font-size: 1.2em;
+        margin: 0;
+    }
+}
+
+.referral-steps {
+    display: grid;
+    grid-template-columns: repeat(3,30%);
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 0;
+    margin-top: 1em;
+    @media (max-width: $layout-breakpoint-small) {}
+
+    @media (max-width: $layout-breakpoint-medium) {}
+
+    @media (max-width: $layout-breakpoint-x-small) {
+        grid-template-columns: repeat(1,98%);
+        gap: 1.5em;
+    }
+}
+
+.referral-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+
+.referral-step>p:first-of-type {
+    margin: 0;
+    font-size: 1.5em;
+
+}
+
+.referral-step>p:last-child {
+    margin: 0;
+    width: 70%;
+    text-align: center;
+}
+
+.referral-step-icon {
+    font-size: 3em;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+    padding: 1em;
+    border-radius: 50%;
+}
+.referal-link-textbox-wrapper{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: .5em;
+    @media (max-width: $layout-breakpoint-small) {
+
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+
+    @media (max-width: $layout-breakpoint-medium) {}
+
+    @media (max-width: $layout-breakpoint-x-small) {
+        padding: 1.5em .5em;
+    }
+   }
+
+.referal-link-textbox-wrapper >div{
+ display: flex;
+ justify-content: start;
+ @media (max-width: $layout-breakpoint-small) {
+    justify-content: center;
+}
+
+@media (max-width: $layout-breakpoint-medium) {}
+
+@media (max-width: $layout-breakpoint-x-small) {
+    
+}
+}
+.referral-link-textbox{
+   
+    
+    position: relative;
+    width: 60em;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    @media (max-width: $layout-breakpoint-small) {
+        width: 100%;
+    }
+
+    @media (max-width: $layout-breakpoint-medium) {}
+
+    @media (max-width: $layout-breakpoint-x-small) {
+        
+    }
+}
+
+.referral-link-textbox>input{
+    
+    width: 100%;
+    padding: 1em .2em ;
+    border-radius: 50px;
+    font-size: 1.5em;
+    padding-left: 1em;
+    border: 0;
+    outline: 0;
+}
+.referral-link-textbox>button{
+    position: absolute;
+    height: 80%;
+    aspect-ratio: 1;
+    right: 0;
+    border-radius: 50%;
+    top: 10%;
+    transform: translateX(-10%);
+    border: 0;
+    outline: 0;
+    
+}
+
+
+.social-media-list{
+    @media (max-width: $layout-breakpoint-small) {
+        width: 100%;
+    }
+
+    @media (max-width: $layout-breakpoint-medium) {}
+
+    @media (max-width: $layout-breakpoint-x-small) {
+        
+    }
+}
+
+
+.social-media-list>ul{
+   list-style-type: none;
+   padding: 0; 
+   display: flex;
+   justify-content: center;
+   gap: .5em;
+   
+
+}
+
+.social-media-list>ul>li{
+    font-size: 2em;
+    padding: .7em;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+   
+}
+.social-media-list>ul>li:hover{
+    background-color: rgba($color: #000000, $alpha: 0.22);
+    cursor: pointer;
+}
+.social-media-icon1{
+color: rgb(2, 73, 128);
+}
+
+.social-media-icon2{
+    color: rgb(132, 217, 248);
+    }
+
+    .social-media-icon3{
+        color: rgb(128, 2, 38);
+        }

@@ -1,0 +1,148 @@
+@import '../../../stylesheets/utilities';
+
+
+
+.transaction-table {
+    min-height: 400px;
+    background-color: rgba($color: black, $alpha: 0.2);
+    border-radius: 1em;
+    padding: 1em;
+    font-family: $gantari;
+    
+    table {
+        display: block;
+        font-size: 1.5em;
+        padding: .3em;
+
+
+        >thead {
+            display: block;
+            font-size: 1.2em;
+            background-color: rgba($color: black, $alpha: 0.2);
+            padding: .5em;
+
+            >tr {
+                
+                display: grid;
+                grid-template-columns: repeat(5,20%);
+
+
+                >td {
+                    line-height: 1.1em;
+                }
+
+            }
+
+
+        }
+
+        >tbody {
+
+            display: block;
+            padding: .5em;
+            >tr {
+                display: grid;
+                grid-template-columns: repeat(5,20%);
+                cursor: pointer;
+
+
+                >td {
+                    padding: .5em;
+                    font-size: 1.1em;
+                }
+            }
+
+            >tr:nth-child(even){
+background-color: rgb(0, 0, 0,0.1);
+            }
+
+
+        }
+
+        tfoot {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

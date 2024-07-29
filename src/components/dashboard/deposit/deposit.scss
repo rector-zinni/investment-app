@@ -1,0 +1,146 @@
+
+
+@import '../../../stylesheets/utilities';
+
+.deposit{
+    background-color: rgba($color: #000000, $alpha: 0.1);
+   max-height: 100vh;
+   overflow-y: scroll;
+   border-radius: 1em;
+   padding: 1em;
+   border: 1px solid $black3;
+   display: flex;
+   flex-direction: column;
+   gap: 2em;
+
+   @media (max-width: $layout-breakpoint-small) {
+   
+   
+}
+@media (max-width: $layout-breakpoint-medium) {
+      
+}
+@media (max-width: $layout-breakpoint-x-small) {
+    
+}
+}
+.deposit-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $black3; 
+}
+
+.deposit-header > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .7em;
+>*{
+    font-size:2em;
+}    
+}
+
+.referal-bonus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1em;
+    border: 1px solid $black3;
+    padding: 1.5em 0;
+    border-radius: 1em;
+}
+
+.referal-bonus>h1{
+    margin: 0;
+}
+
+.referal-bonus>span{
+padding: 0 1em;
+}
+.referal-bonus-textbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   height: 4em;
+    min-width: 90%;
+    >*{
+        font-size: 1.4em;
+        padding: .5em;
+        outline: none;
+        border: none;           
+        box-sizing: border-box;
+        color: $grey1;
+        height: 100%;
+        @media (max-width: $layout-breakpoint-x-small) {
+            height: 100%;
+        }
+    }
+    >input{
+        min-width: 80%;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        border-top-left-radius: .3em;
+        border-bottom-left-radius: .3em;
+
+    }
+    >button{
+        min-width: 20%;
+        background-color: rgb(43, 33, 48);
+        border-top-right-radius: .3em;
+        border-bottom-right-radius: .3em;
+        cursor: pointer;
+        @media (max-width: $layout-breakpoint-x-small) {
+           font-size: 1.3em;
+        }
+    }
+}
+
+.deposit-list-wrapper,.deposit-list-header{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.dl-header{
+margin: 0;
+font-size: 2em;
+}
+.dl-desc{
+    margin: 0;
+    font-size: 1.4em;
+}
+
+.deposit-list{
+   display: grid;
+   grid-template-columns: 45% 45%;
+   gap: 2em;
+   place-content:space-between;
+}
+
+.deposit-option{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border: 1px solid;
+    gap: .5em;
+    border-radius: 1em;
+    background-color: rgba($color: #000000, $alpha: .10);
+    transition: all 200ms;
+    padding: .5em;
+}
+.deposit-option:hover{
+    background-color: rgba($color: #000000, $alpha: .15);
+    cursor: pointer;
+}
+
+
+
+.deposit-option>img{
+   width: 10%;
+}
+.deposit-option>p{
+    font-size: 1.5em;
+ }
+
+
+

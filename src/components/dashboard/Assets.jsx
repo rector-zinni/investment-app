@@ -2,17 +2,17 @@ import { faFileInvoiceDollar } from '@fortawesome/free-solid-svg-icons';
 import '../../stylesheets/assets.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Assets =  () => {
+const Assets =  ({amount,assetType,incrament}) => {
     return ( 
         <div className="assets component-shadow-2">
 <div className="amt">
-    <span>Investment Assets</span>
+    <span>{assetType}</span>
     <FontAwesomeIcon icon={faFileInvoiceDollar}/>
 </div>
 
 <div className="invest-amt">
-    <p className='lato-black'>$50,673</p>
-    <span>+1.65% <i>today</i></span> 
+    <p className='lato-black'>{amount}</p>
+    <span>{incrament} <i>today</i></span> 
 </div>
         </div>
      ); 

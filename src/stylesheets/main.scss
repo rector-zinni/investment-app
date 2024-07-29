@@ -7,6 +7,8 @@
     gap: 1.5em;
     border: 1px solid $black3;
     border-radius: .5em;
+    max-height: 100vh;
+    overflow-y: scroll;
     
 }
 .welcome-msg{
@@ -57,4 +59,55 @@ gap: .5em;
 @media (max-width: $layout-breakpoint-x-small) {
     grid-template-columns: repeat(1,98%);
 }
+}
+.linechart{
+    
+    background-color: rgba($color: #000000, $alpha:0.1);
+    padding: 1em;
+    border-radius: 1em;
+    max-width: 600px;
+    width: 1000px;
+    
+    @media (max-width: $layout-breakpoint-small) {
+        max-width: 95%;
+        width: 1000px;
+       
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+        grid-template-columns: repeat(1,98%);
+    }
+}
+.widgets{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1em;
+    transition: all 100ms;
+    @media (max-width: $layout-breakpoint-small) {
+      flex-direction: column;
+       
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+        flex-direction: column;
+    }
+    >:hover{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    }
+}
+
+.widgets > *{
+height: 300px;
+}
+
+.t-table{
+    transition: all 100ms;
+    >:hover{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    }
 }

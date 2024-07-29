@@ -1,0 +1,85 @@
+@import '../../../stylesheets/utilities';
+
+.settings{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    padding: 1em;
+    border-radius: 1em;
+    background-color: rgba($color: #000000, $alpha: .1);
+    max-height: 100vh;
+}
+
+.setting-pane{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    @media (max-width: $layout-breakpoint-small) {
+         
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+        grid-template-columns: 100%;
+    }
+}
+
+.settings-list{
+
+}
+.settings-list>ul{
+    list-style-type:none;
+    padding: 0em;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    align-items: center;
+
+}
+.settings-list>ul>li{
+   width: 98%;
+
+   
+  
+    >*{
+        text-decoration: none;
+        @media (max-width: $layout-breakpoint-small) {
+         
+        }
+        @media (max-width: $layout-breakpoint-medium) {
+              
+        }
+        @media (max-width: $layout-breakpoint-x-small) {
+           width: 90%;
+           display: block;
+           color: white;
+        }
+    }
+
+    >.settings-link{
+        width: 90%;
+        height: 100%;
+        display: block;
+        padding: .5em;
+        color: inherit;
+        background-color: rgba($color: #000000, $alpha: .1);
+   color :inherit;
+   border-radius: .5em;
+    }
+    >.settings-link.active{
+        background-color: $red2;
+             color: white;   
+    }
+   
+}
+
+.settings-main{
+    @media (max-width: $layout-breakpoint-small) {
+         
+    }
+    @media (max-width: $layout-breakpoint-medium) {
+          
+    }
+    @media (max-width: $layout-breakpoint-x-small) {
+       width: 100%;}
+}

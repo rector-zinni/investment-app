@@ -1,8 +1,9 @@
-import { Link, NavLink } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
 import '../dashboard/.././../stylesheets/dashboardlist.scss'
-import { faDashboard, faDollarSign } from '@fortawesome/free-solid-svg-icons'
+import { faCalculator, faCog, faDashboard, faDollarSign, faSignOut, faUser, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useRef } from 'react'
+import { faSourcetree } from '@fortawesome/free-brands-svg-icons'
 
 
 const DashboardList = () => {
@@ -10,7 +11,7 @@ const DashboardList = () => {
     const dashboard_list_ref = useRef([])
     const ListActive = (ref, index) => {
        
-        if (ref.current[index] != undefined) {
+        if (ref.current[index] !== undefined) {
 
             ref.current[index].style.borderLeft = '.2em solid white'
         }
@@ -24,7 +25,35 @@ const DashboardList = () => {
         title: "Deposit",
         icon: faDollarSign,
         toValue: "deposit",
+    },
+    {
+        title: "Calculator",
+        icon: faCalculator,
+        toValue: "calculator",
+    },
+    {
+        title: "Profile",
+        icon: faUser,
+        toValue: "profile",
     }
+    ,
+    {
+        title: "Settings",
+        icon: faCog,
+        toValue: "Settings",
+    },
+    {
+        title: "Refferal",
+        icon: faSourcetree,
+        toValue: "refferal",
+    }
+    ,
+    {
+        title: "Wallet",
+        icon: faWallet,
+        toValue: "wallet",
+    }
+   
     ]
     return (
         <div className="dashboard-list">
@@ -45,6 +74,11 @@ const DashboardList = () => {
                         </li>
                     ))
                 }
+                <li><a className='nav-link' >
+                                <div><span>Logout</span> <FontAwesomeIcon icon={faSignOut} /></div>
+                               
+                            </a>
+                        </li>
             </ul>
         </div>
     );
